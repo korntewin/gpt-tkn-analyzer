@@ -12,9 +12,9 @@ Using the tiktoken analyzer, we dissect the GPT tokenizer’s language distribut
 
 | language | size | sampling | percent_ratio |
 | :--: | :--: | :--: | :--: |
-| en |	88191 |	 meal   pcb   proficient   Wohn   syn  zo   Madame  _metadata   ordained  _push | 98.8323
-| th |	57 | 	ั ร ไม ต ้ ง ื่ ท ื ล	| 0.0639
-| jp |	985 |	描述 県 キ 藏 最 后 作 第 设置 结	| 1.1039
+| en |	88191 |	 meal   pcb   proficient   Wohn   syn  zo   Madame  _metadata   ordained  _push | 87.9658
+| th |	57 | 	ั ร ไม ต ้ ง ื่ ท ื ล	| 0.0569
+| jp |	985 |	描述 県 キ 藏 最 后 作 第 设置 结	| 0.9825
 
 From summary table:
 * English Text Tokens: A staggering 98.8% of tokens are dedicated to English text! highlighting a significant bias towards the English language.
