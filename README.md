@@ -19,9 +19,9 @@ From the table below, we can see that a **single token can represent the whole w
 | jp |	985 |	描述, 県, キ, 藏, 最, 后, 作, 第, 设置, 结	| 0.9825
 
 From summary table:
-* English Text Tokens: A staggering 98.8% of tokens are dedicated to English text! highlighting a significant bias towards the English language.
+* English Text Tokens: A staggering 87.97% of tokens are dedicated to English text! highlighting a significant bias towards the English language.
 * Thai Text Tokens: In contrast, a mere 0.06% of tokens represent Thai text, indicating a substantial underrepresentation.
-* Japanese Text Tokens: Japanese text fares slightly better, with 1.1% of tokens, but still showcases a notable disparity.  
+* Japanese Text Tokens: Japanese text fares slightly better, with 0.98% of tokens, but still showcases a notable disparity.  
 
 > The total number of tokens (vocabulary size) is 100,256 (exclude special token).
 
