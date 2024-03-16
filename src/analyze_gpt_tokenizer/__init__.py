@@ -3,10 +3,10 @@ import argparse
 import base64
 import pathlib
 import os
+import logging
 from multiprocessing import Pool
 
 import pandas as pd
-import logging
 
 from .utils import get_summary_table, extract_line
 
@@ -21,7 +21,7 @@ def get_parser():
     )
 
     default_txtrank_fn = (
-        pathlib.Path(__file__).parents[1]
+        pathlib.Path(__file__).parents[2]
         / "notebooks"
         / "data"
         / "cl100k_base.tiktoken"
@@ -31,7 +31,7 @@ def get_parser():
         "-t",
         "--textrank-file",
         type=str,
-        help="The filename of the tokenizer's text rank",
+        help="The filename of the tokenizer's text rank. Default to notebooks/data/cl100k_base.tiktoken",
         default=default_txtrank_fn,
         required=False,
     )
@@ -39,12 +39,12 @@ def get_parser():
         "-o",
         "--output",
         type=str,
-        help="Output directory to save the summary table and converted text table",
+        help="Output directory to save the summary table and converted text table. Default to current directory.",
         default=".",
         required=False,
     )
     parser.add_argument(
-        "-v", "--verbose", help="Display data thoroughly", action="store_true"
+        "-v", "--verbose", help="Print log for debugging", action="store_true"
     )
 
     return parser
