@@ -48,7 +48,7 @@ From the word cloud below, it is clear that the longest text in the Thai token i
 
 # Set up
 
-To reproduce this project on your local machine, I recommend to use [rye](https://rye-up.com/) as a package manager and also a python version management. Personally recommended to use `uv` as package installer for `rye` for blazingly fast package resolving & installing using Rust!
+To reproduce this project on your local machine, I recommend to use [rye](https://rye-up.com/) as a package and also a python version management tool. Personally recommended to use `uv` as package installer for `rye` for blazingly fast package resolving & installing using Rust!
 
 After you have `rye` installed:
 
