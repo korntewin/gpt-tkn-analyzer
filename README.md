@@ -10,11 +10,13 @@ Using the tiktoken analyzer, we dissect the GPT tokenizer’s language distribut
 
 ## Findings:
 
-| language | size | sampling | percent_ratio |
+From the table below, we can see that a **single token can represent the whole word for English!** For Thai, it can represent *at most 2-3 characters per one token*. Meaning that GPT needs to generate much more tokens to be composed into Thai words! Japanese characters per token seem to be more meaningful than thai text per token.
+
+| language | size | sampling of a single token | percent_ratio |
 | :--: | :--: | :--: | :--: |
-| en |	88191 |	 meal   pcb   proficient   Wohn   syn  zo   Madame  _metadata   ordained  _push | 87.9658
-| th |	57 | 	ั ร ไม ต ้ ง ื่ ท ื ล	| 0.0569
-| jp |	985 |	描述 県 キ 藏 最 后 作 第 设置 结	| 0.9825
+| en |	88191 |	 meal,   pcb,   proficient, Wohn, syn, zo, Madame, _metadata, ordained, _push | 87.9658
+| th |	57 | 	ั, ร, ไม, ต ้, ง ื่, ท ื, ล	| 0.0569
+| jp |	985 |	描述, 県, キ, 藏, 最, 后, 作, 第, 设置, 结	| 0.9825
 
 From summary table:
 * English Text Tokens: A staggering 98.8% of tokens are dedicated to English text! highlighting a significant bias towards the English language.
@@ -27,11 +29,13 @@ From summary table:
 The analysis confirms a heavy bias in the GPT tokenizer towards English, with other languages like Thai and Japanese being significantly underrepresented. This insight could be pivotal for future developments in tokenizer technology to create a more balanced linguistic representation.
 
 # Visualization
-The rank of a token is determined during the BPE (Byte Pair Encoding) merge phase, where the most common pairs of tokens are merged, incrementally generating a new rank. This means that tokens with a higher rank always have a longer text length, and thus, typically form more meaningful words.
+The rank of a token is determined during the BPE (Byte Pair Encoding) merging phase, where the most common pairs of tokens are merged incrementally generating a new rank. This means that tokens with a higher rank always have a longer text length, and thus, typically form more meaningful words.
 
-By generating a word cloud sorted by rank and grouped by language, we can observe the themes of the longest possible texts in various languages.
+By generating a wordcloud sorted by rank and grouped by language, we can observe the themes of the longest possible *texts per token* in various languages.
 
 From the word cloud below, it is clear that the longest text in the Thai token is `การ`, which is not a meaningful word at all 😂. This results in GPT needing to compose multiple tokens to form a single word, and many more tokens to form a paragraph! In contrast, with English tokens, a single token often represents a meaningful word, such as `conveyor`, `daycare`, or `merciless`.
+
+> The image below represent the wordcloud of each token on different language!
 
 ## English
 <img src="pics/en_wordcloud.jpg.png" width="auto">
@@ -44,7 +48,7 @@ From the word cloud below, it is clear that the longest text in the Thai token i
 
 # Set up
 
-To reproduce this project on your local machine, I recommend to use [rye](https://rye-up.com/) as a package manager and also a python version management. Personally recommended to use `uv` as package installer for blazingly fast package resolving & installing using Rust!
+To reproduce this project on your local machine, I recommend to use [rye](https://rye-up.com/) as a package manager and also a python version management. Personally recommended to use `uv` as package installer for `rye` for blazingly fast package resolving & installing using Rust!
 
 After you have `rye` installed:
 
