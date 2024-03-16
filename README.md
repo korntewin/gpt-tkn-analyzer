@@ -42,8 +42,35 @@ From the word cloud below, it is clear that the longest text in the Thai token i
 
 # Set up
 
-To reproduce this project on your local machine, I recommend to use [rye](https://rye-up.com/) as a package manager and also a python version management. After you have `rye` installed, 
+To reproduce this project on your local machine, I recommend to use [rye](https://rye-up.com/) as a package manager and also a python version management. Personally recommended to use `uv` as package installer for blazingly fast package resolving & installing using Rust!
+
+After you have `rye` installed:
 
 1. Run `rye sync --no-lock` to generate `.venv` in your directory. And if you didn't already have `python 3.12`, rye will also set that up for you.
 2. Run `rye run analyze-gpt-tokenizer` to generate `summary.csv` and `token_text.csv` for further analysis!
 3. You can also check additional params by running `rye run analyze-gpt-tokenizer --help`
+
+# Project structure
+
+```tree
+├── README.md
+├── notebooks  # For interative analysis
+│   ├── analyze.ipynb
+│   ├── data
+│   │   └── cl100k_base.tiktoken
+│   ├── fonts
+│   │   ├── *.ttf
+│   └── output
+│       ├── cl100k_base.text.csv
+│       └── cl100k_base.token_summary.csv
+├── pyproject.toml
+├── requirements-dev.lock
+├── requirements.lock
+└── src  # Command line source code
+    └── analyze_gpt_tokenizer
+        ├── __init__.py
+        ├── __main__.py
+        ├── _types.py
+        ├── config.py
+        └── utils.py
+```
