@@ -1,6 +1,6 @@
 # Project Overview: GPT Tokenizer Analysis
 ## Objective: 
-To quantify the language bias within the GPT tokenizer, particularly focusing on its distribution of tokens across different languages.
+To quantify the language bias within the GPT tokenizer `cli100k-base`, particularly focusing on its distribution of tokens across different languages.
 
 ## Background: 
 The GPT tokenizer is known for its inclination towards English text due to the vast amount of English document during training Byte Pair Encoding (BPE) tokenizer. This project aims to analyze and present concrete data on the extent of this skew.
@@ -19,7 +19,9 @@ Using the tiktoken analyzer, we dissect the GPT tokenizer’s language distribut
 From summary table:
 * English Text Tokens: A staggering 98.8% of tokens are dedicated to English text! highlighting a significant bias towards the English language.
 * Thai Text Tokens: In contrast, a mere 0.06% of tokens represent Thai text, indicating a substantial underrepresentation.
-* Japanese Text Tokens: Japanese text fares slightly better, with 1.1% of tokens, but still showcases a notable disparity.
+* Japanese Text Tokens: Japanese text fares slightly better, with 1.1% of tokens, but still showcases a notable disparity.  
+
+> The total number of tokens (vocabulary size) is 100,256 (exclude special token).
 
 ## Conclusion: 
 The analysis confirms a heavy bias in the GPT tokenizer towards English, with other languages like Thai and Japanese being significantly underrepresented. This insight could be pivotal for future developments in tokenizer technology to create a more balanced linguistic representation.
