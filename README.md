@@ -10,7 +10,7 @@ Using the tiktoken analyzer, we dissect the GPT tokenizer’s language distribut
 
 ## Findings:
 
-From the table below, we can see that a **single token can represent the whole word for English!** For Thai, it can represent *at most 2-3 characters per one token*. Meaning that GPT needs to generate much more tokens to be composed into Thai words! Japanese characters per token seem to be more meaningful than thai text per token.
+From the table below, we can see that a **single token can represent the whole word for English!** For Thai, it can represent *at most 2-3 characters per one token*. Meaning that GPT needs to generate/consume much more tokens to be composed into Thai words! Japanese characters per token seem to be more meaningful than thai text per token.
 
 | language | size | sampling of a single token | percent_ratio |
 | :--: | :--: | :--: | :--: |
