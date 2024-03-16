@@ -1,6 +1,6 @@
 # Project Overview: GPT Tokenizer Analysis
 ## Objective: 
-To quantify the language bias within the GPT tokenizer `cli100k-base`, particularly focusing on its distribution of tokens across different languages.
+To quantify the language bias within the GPT tokenizer `cl100k-base`, particularly focusing on its distribution of tokens across different languages.
 
 ## Background: 
 The GPT tokenizer is known for its inclination towards English text due to the vast amount of English document during training Byte Pair Encoding (BPE) tokenizer. This project aims to analyze and present concrete data on the extent of this skew.
